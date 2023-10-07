@@ -1,0 +1,68 @@
+
+
+  <div class="area"><br><br><br>
+    <div class="area">
+        <form [formGroup]="SearchForm"class='form' >
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="crnumber">CR Number:</label>
+              <input type="text" formControlName="crnumber" id="crnumber" class="form-control" placeholder="CR Name" />
+            </div>
+            <div class="form-group">
+              <label for="agencyname">Agency Name:</label>
+              <input type="text" formControlName="agencyname" id="agencyname" class="form-control" placeholder="Agency Name" />
+            </div>
+            <div class="form-group">
+              <label for="customscode">Customs Code:</label>
+              <input type="text" formControlName="customscode" id="customscode" class="form-control" placeholder="Customs Code" />
+            </div>
+            <div class="form-group">
+              <label for="Creationdate">Creation Date From:</label>
+              <input type="text" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="Creation Date" />
+            </div>
+            <div class="form-group">
+              <label for="clearingagency">Clearing Agency Type:</label>
+              <input type="text" formControlName="clearingagency" id="clearingagency" class="form-control" placeholder="Clearing Agency Type" />
+            </div>
+            <div class="form-group">
+              <label for="status">Status:</label>
+              <input type="text" formControlName="status" id="status" class="form-control" placeholder="Status" />
+            </div>
+            <div class="form-group">
+              <label for="establishment">Establishment ID:</label>
+              <input type="text" formControlName="establishment" id="establishment" class="form-control" placeholder="Establishment ID" />
+            </div>
+            <div class="form-group">
+              <label for="creationDateto">Creation Date To:</label>
+              <input type="text" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="Creation Date To" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="center-container">
+        <button  class="searchBtn"(click)="formDetail()">Search</button>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark px-2">Approve Clear agency</nav>
+
+    <table class="formTable">
+        <thead>
+          <tr>
+            <th *ngFor="let column of headers">{{ column }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows">
+            <td>{{row.CRNumber}}</td>
+            <td>{{row.CustomCode}}</td>
+            <td>{{row.AgencyName}}</td>
+            <td>{{row.CreationDateFrom}}</td>
+            <td>{{row.Status}}</td>
+            <td>{{row.CreationDateTo}}</td>
+            <td>{{row.ClearingAgency}}</td>
+            <td>{{row.EstablishmentID}}</td>
+            <td>{{row.Country}}</td>
+          </tr>
+        </tbody>
+      </table>
+      

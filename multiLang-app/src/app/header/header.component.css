@@ -1,0 +1,38 @@
+nav{
+    height:100%;
+}
+
+.side-nav-button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index: 2;
+}
+
+/* ============== */
+
+.btn-secondary {
+    background-color: black; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.2s, color 0.2s; /* Smooth transition effect */
+  }
+  
+  /* Icon styles */
+  .btn-secondary i {
+    margin-right: 5px; /* Space between the icon and text */
+    font-size: 18px; /* Icon size */
+  }
+  
+  /* Hover effect */
+  .btn-secondary:hover {
+    background-color: black; /* Button background color on hover */
+    color: #fff; /* Button text color on hover */
+  }

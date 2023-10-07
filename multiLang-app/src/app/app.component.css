@@ -1,0 +1,81 @@
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+   
+}
+app-app-side-nav{
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    bottom: -20px;
+
+}
+mat-sidenav-container{
+    height:100%;
+    position: absolute;
+    top: 50px;
+    
+    /* background-color: black; */
+    /* color: white; */
+   
+}
+/* app-app-side-nav{
+    border: 2px black solid;
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    background-color: rgba(34,34,34,1);
+    border-top:1px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+} */
+.sideNav{
+    border: 2px black solid;
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    background-color: rgba(34,34,34,1);
+    border-top:1px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+ .app-side-nav-open  {
+    width: 250px;
+    
+}
+
+.display-area{
+    position: absolute;
+    left: 250px;
+    width: calc(100% - 350px);
+    top: 68px;
+}
+app-data-table{
+    position: absolute;
+    left: 292px;
+    top: 51px;
+}
+
+
+button {
+    
+    position: relative;
+    top: 51px;
+    color: black;
+  }
+  .toolbar-row {
+    align-items: center; /* Vertically center-align contents */
+  }
+  mat-sidenav{
+    background-color: aqua;
+  }
+  
+  /* -------------------------------- */

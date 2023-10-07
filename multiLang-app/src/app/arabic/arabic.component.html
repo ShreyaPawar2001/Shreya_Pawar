@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+    <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <i class="fa-solid fa-list"></i>
+      
+      </button>
+     
+    <a class="navbar-brand px-4" href="#"></a>
+    <div class="navbar-collapse">
+
+        <ul class="navbar-nav me-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Language Option</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><button class="dropdown-item"  (click)="toArabic()">Arabic</button></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar -->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" dir="rtl">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p><i class="fa-solid fa-house"></i>لوحة القيادة</p>
+      <p><i class="fa-solid fa-chart-line"></i>تحليلات</p>
+      <p><i class="fa-solid fa-box"></i>منتجات</p>
+      <p><i class="fa-solid fa-box"></i>الطلب</p>
+      <p><i class="fa-solid fa-gear"></i>الإعدادات</p>
+      <p><i class="fa-solid fa-circle-info"></i>اتصال</p>
+    </div>
+  </div>
+
+  <!--form -->
+<div class="area1"></div>
+  <div class="area"><br><br><br>
+    <div class="area">
+      <form [formGroup]="SearchForm" class='form' dir="rtl">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="crnumber">رقم السجل التجاري:</label>
+            <input type="text" formControlName="crnumber" id="crnumber" class="form-control" placeholder="اسم السجل التجاري" />
+          </div>
+          <div class="form-group">
+            <label for="agencyname">اسم الوكالة:</label>
+            <input type="text" formControlName="agencyname" id="agencyname" class="form-control" placeholder="اسم الوكالة" />
+          </div>
+          <div class="form-group">
+            <label for="customscode">رمز الجمارك:</label>
+            <input type="text" formControlName="customscode" id="customscode" class="form-control" placeholder="رمز الجمارك" />
+          </div>
+          <div class="form-group">
+            <label for="Creationdate">تاريخ الإنشاء من:</label>
+            <input type="text" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="تاريخ الإنشاء" />
+          </div>
+          <div class="form-group">
+            <label for="clearingagency">نوع وكالة التخليص:</label>
+            <input type="text" formControlName="clearingagency" id="clearingagency" class="form-control" placeholder="نوع وكالة التخليص" />
+          </div>
+          <div class="form-group">
+            <label for="status">الحالة:</label>
+            <input type="text" formControlName="status" id="status" class="form-control" placeholder="الحالة" />
+          </div>
+          <div class="form-group">
+            <label for="establishment">رقم الهيئة:</label>
+            <input type="text" formControlName="establishment" id="establishment" class="form-control" placeholder="رقم الهيئة" />
+          </div>
+          <div class="form-group">
+            <label for="creationDateto">تاريخ الإنشاء إلى:</label>
+            <input type="text" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="تاريخ الإنشاء إلى" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="center-container">
+      <button (click)="formDetail()">بحث</button>
+    </div>
+  </div>
+  
+  <!-- table -->
+
+  <table class="formTable" dir="rtl">
+    <thead>
+      <tr>
+        <th *ngFor="let column of headers">عنوان العمود</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td>{{row.CRNumber}}</td>
+        <td>{{row.CustomCode}}</td>
+        <td>{{row.AgencyName}}</td>
+        <td>{{row.CreationDateFrom}}</td>
+        <td>{{row.Status}}</td>
+        <td>{{row.CreationDateTo}}</td>
+        <td>{{row.ClearingAgency}}</td>
+        <td>{{row.EstablishmentID}}</td>
+        <td>{{row.Country}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+    <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <i class="fa-solid fa-list"></i>
+      
+      </button>
+     
+    <a class="navbar-brand px-4" href="#"></a>
+    <div class="navbar-collapse">
+
+        <ul class="navbar-nav me-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> <i class="fa-solid fa-globe"></i> Language Option</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item"  (click)="toEnglish()">English</a></li>
+                    <li><button class="dropdown-item"  (click)="toArabic()">Arabic</button></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<app-app-side-nav></app-app-side-nav>
+
+
+<app-data-table></app-data-table>
+
