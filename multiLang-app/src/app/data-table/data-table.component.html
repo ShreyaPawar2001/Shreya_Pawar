@@ -3,14 +3,15 @@
   <div class="area"><br><br><br>
     <div class="area">
         <form [formGroup]="SearchForm"class='form' >
+          <div class="searchInput">Search Criretia</div><br><hr class="Horizon">
           <div class="form-grid">
             <div class="form-group">
               <label for="crnumber">CR Number:</label>
-              <input type="text" formControlName="crnumber" id="crnumber" class="form-control" placeholder="CR Name" />
+              <input type="text" formControlName="crnumber" id="crnumber" class="form-control" placeholder="CR Name"  />
             </div>
             <div class="form-group">
               <label for="agencyname">Agency Name:</label>
-              <input type="text" formControlName="agencyname" id="agencyname" class="form-control" placeholder="Agency Name" />
+              <input type="text" formControlName="agencyname" id="agencyname" class="form-control" placeholder="Agency Name" [(ngModel)]="searchText"/>
             </div>
             <div class="form-group">
               <label for="customscode">Customs Code:</label>
@@ -18,15 +19,25 @@
             </div>
             <div class="form-group">
               <label for="Creationdate">Creation Date From:</label>
-              <input type="text" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="Creation Date" />
+              <input type="datetime-local" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="Creation Date" />
             </div>
             <div class="form-group">
               <label for="clearingagency">Clearing Agency Type:</label>
-              <input type="text" formControlName="clearingagency" id="clearingagency" class="form-control" placeholder="Clearing Agency Type" />
+              <select formControlName="status" id="status" class="form-control" >
+                <option value="" disabled selected>Select one</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="status">Status:</label>
-              <input type="text" formControlName="status" id="status" class="form-control" placeholder="Status" />
+              <select formControlName="status" id="status" class="form-control" >
+                <option value="" disabled selected>Select one</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="establishment">Establishment ID:</label>
@@ -34,17 +45,19 @@
             </div>
             <div class="form-group">
               <label for="creationDateto">Creation Date To:</label>
-              <input type="text" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="Creation Date To" />
+              <input type="datetime-local" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="Creation Date To" />
             </div>
           </div>
         </form>
       </div>
       <div class="center-container">
-        <button  class="searchBtn"(click)="formDetail()">Search</button>
+        <button  class="searchBtn"(click)="formDetail()" >Search</button>&nbsp;&nbsp;&nbsp;
+        <button class="searchBtn" (click)="resetDetail()">Reset</button>
       </div>
     </div>
     <nav class="navbar navbar-expand navbar-dark bg-dark px-2">Approve Clear agency</nav>
 
+    <div class="searchInput" id="searchid">Search Results</div><br><hr id="hrid" >
     <table class="formTable">
         <thead>
           <tr>
@@ -52,16 +65,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let row of rows">
+          <tr *ngFor="let row of rows | searchFilter :searchCity" >
             <td>{{row.CRNumber}}</td>
             <td>{{row.CustomCode}}</td>
             <td>{{row.AgencyName}}</td>
-            <td>{{row.CreationDateFrom}}</td>
+            <!-- <td>{{row.CreationDateFrom}}</td> -->
             <td>{{row.Status}}</td>
             <td>{{row.CreationDateTo}}</td>
             <td>{{row.ClearingAgency}}</td>
             <td>{{row.EstablishmentID}}</td>
-            <td>{{row.Country}}</td>
+            <!-- <td>{{row.Country}}</td> -->
           </tr>
         </tbody>
       </table>

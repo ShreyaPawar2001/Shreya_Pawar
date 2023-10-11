@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ArabicComponent } from './arabic/arabic.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ArabicComponent } from './arabic/arabic.component';
     HeaderComponent,
     AppSideNavComponent,
     DataTableComponent,
-    ArabicComponent
+    ArabicComponent,
+    SearchFilterPipe,
+    
   ],
   imports: [
     BrowserModule,

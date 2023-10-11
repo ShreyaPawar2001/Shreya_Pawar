@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class ArabicComponent {
   SearchForm!:FormGroup;
+  searchText!:string;
+  searchCity:any;
 
   constructor(private router:Router,private fb:FormBuilder){}
 
@@ -24,7 +26,7 @@ export class ArabicComponent {
   }
 
 
-  headers = ["CR Number", "Custom Code", "Agency Name", "Creation Date From", "Status","CreationDateTo","ClearingAgency","Establishment ID"];
+  headers = ["CR Number", "Custom Code", "Agency Name",  "Status","CreationDateTo","ClearingAgency","Establishment ID"];
   formDetail(){
     this.SearchForm=this.fb.group({
       crnumber:[''],
@@ -37,6 +39,14 @@ export class ArabicComponent {
       creationDateto:['']
 
     })
+    this.searchCity =this.searchText;
+
+   
+    
+  }
+  resetDetails(){
+    this.searchCity=' ';
+    this.searchText=' ';
   }
 
 
@@ -47,37 +57,34 @@ export class ArabicComponent {
 
   rows = [
     {
-      "CRNumber" : "1",
-      "CustomCode" : "Rau",
-      "AgencyName" :"XX",
-      "CreationDateFrom":"dd",
-      "Status":"0",
-      "CreationDateTo":"ll",
-      "ClearingAgency" : "21",
-      "EstablishmentID" : "Male",
-      "Country" : "India"
+      "CRNumber" : "14545",
+      "CustomCode" : "L2771",
+      "AgencyName" :"new ncm2",
+      "Status":"Pending Approval",
+      "CreationDateTo":"27/8/2023",
+      "ClearingAgency" : "Government",
+      "EstablishmentID" : "2234789",
+      
     },
     {
-      "CRNumber" : "2",
-      "CustomCode" : "Raj",
-      "AgencyName" :"XX",
-      "CreationDateFrom":"dd",
-      "Status":"0",
-      "CreationDateTo":"ll",
-      "ClearingAgency" : "21",
-      "EstablishmentID" : "Male",
-      "Country" : "India"
+      "CRNumber" : "14542",
+      "CustomCode" : "L2772",
+      "AgencyName" :"angular FZc",
+      "Status":"Pending Approval",
+      "CreationDateTo":"28/8/2023",
+      "ClearingAgency" : "Government",
+      "EstablishmentID" : "1334789",
+      
     },
     {
-      "CRNumber" : "3",
-      "CustomCode" : "Mohan",
-      "AgencyName" :"XX",
-      "CreationDateFrom":"dd",
-      "Status":"0",
-      "CreationDateTo":"ll",
-      "ClearingAgency" : "21",
-      "EstablishmentID" : "Male",
-      "Country" : "India"
+      "CRNumber" : "14543",
+      "CustomCode" : "L2773",
+      "AgencyName" :"non gov",
+      "Status":"Rejected",
+      "CreationDateTo":"29/8/2023",
+      "ClearingAgency" : "Private",
+      "EstablishmentID" : "1234789",
+      
     },
   ]
 

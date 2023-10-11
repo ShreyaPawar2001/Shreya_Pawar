@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark px-2">
-    <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    <button class="btn_1 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
         <i class="fa-solid fa-list"></i>
       
       </button>
@@ -14,8 +14,12 @@
                 <ul class="dropdown-menu dropdown-menu-dark">
                     <li><a class="dropdown-item" href="#">English</a></li>
                     <li><button class="dropdown-item"  (click)="toArabic()">Arabic</button></li>
-                </ul>
+                  </ul>
+                
             </li>
+            <button class="nav-button_logout">Logout</button>
+            <button class="nav_button_Contat">Contact Us</button>
+            <button class="nav_button_Home">Home</button>
         </ul>
     </div>
 </nav>
@@ -23,25 +27,91 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" dir="rtl">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body">
-      <p><i class="fa-solid fa-house"></i>لوحة القيادة</p>
-      <p><i class="fa-solid fa-chart-line"></i>تحليلات</p>
-      <p><i class="fa-solid fa-box"></i>منتجات</p>
-      <p><i class="fa-solid fa-box"></i>الطلب</p>
-      <p><i class="fa-solid fa-gear"></i>الإعدادات</p>
-      <p><i class="fa-solid fa-circle-info"></i>اتصال</p>
+<!-- sidenavbar start -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          مدير النظام
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          المستودعات الخاصة
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          ترخيص وكالة تخليص  <br>الأحداث الرياضية
+
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          تسجيل
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          بيان البضائع
+
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          البضائع المحتجزة
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!--form -->
-<div class="area1"></div>
+  
+<div class="area1">الموافقة على وكالة واضحة</div>
   <div class="area"><br><br><br>
     <div class="area">
+      
       <form [formGroup]="SearchForm" class='form' dir="rtl">
+        <div class="searchInput">Search Criretia</div><br><hr class="Horizon">
         <div class="form-grid">
           <div class="form-group">
+           
             <label for="crnumber">رقم السجل التجاري:</label>
             <input type="text" formControlName="crnumber" id="crnumber" class="form-control" placeholder="اسم السجل التجاري" />
           </div>
@@ -55,15 +125,25 @@
           </div>
           <div class="form-group">
             <label for="Creationdate">تاريخ الإنشاء من:</label>
-            <input type="text" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="تاريخ الإنشاء" />
+            <input type="datetime-local" formControlName="Creationdate" id="Creationdate" class="form-control" placeholder="تاريخ الإنشاء" />
           </div>
           <div class="form-group">
             <label for="clearingagency">نوع وكالة التخليص:</label>
-            <input type="text" formControlName="clearingagency" id="clearingagency" class="form-control" placeholder="نوع وكالة التخليص" />
+            <select formControlName="status" id="status" class="form-control" >
+              <option value="" disabled selected>اختر واحدة</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="status">الحالة:</label>
-            <input type="text" formControlName="status" id="status" class="form-control" placeholder="الحالة" />
+            <select formControlName="status" id="status" class="form-control" >
+              <option value="" disabled selected>اختر واحدة</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="establishment">رقم الهيئة:</label>
@@ -71,18 +151,19 @@
           </div>
           <div class="form-group">
             <label for="creationDateto">تاريخ الإنشاء إلى:</label>
-            <input type="text" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="تاريخ الإنشاء إلى" />
+            <input type="datetime-local" formControlName="creationDateto" id="creationDateto" class="form-control" placeholder="تاريخ الإنشاء إلى" />
           </div>
         </div>
       </form>
     </div>
     <div class="center-container">
-      <button (click)="formDetail()">بحث</button>
+      <button (click)="formDetail()" class="buttonSearch">بحث</button>&nbsp;&nbsp;&nbsp;
+      <button  class="buttonSearch" (click)="resetDetails()">إعادة ضبط</button>
     </div>
   </div>
   
   <!-- table -->
-
+  <div class="searchInput" id="searchid">Search Results</div><br><hr id="hrid" >
   <table class="formTable" dir="rtl">
     <thead>
       <tr>
@@ -90,16 +171,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of rows">
+      <tr *ngFor="let row of rows | searchFilter :searchCity">
         <td>{{row.CRNumber}}</td>
         <td>{{row.CustomCode}}</td>
         <td>{{row.AgencyName}}</td>
-        <td>{{row.CreationDateFrom}}</td>
+        <!-- <td>{{row.CreationDateFrom}}</td> -->
         <td>{{row.Status}}</td>
         <td>{{row.CreationDateTo}}</td>
         <td>{{row.ClearingAgency}}</td>
         <td>{{row.EstablishmentID}}</td>
-        <td>{{row.Country}}</td>
+        <!-- <td>{{row.Country}}</td> -->
       </tr>
     </tbody>
   </table>

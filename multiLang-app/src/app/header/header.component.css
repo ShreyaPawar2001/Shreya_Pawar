@@ -13,6 +13,21 @@ nav{
     z-index: 2;
 }
 
+/* CSS for button home contact logout */
+.nav-button_logout{
+  position: relative;
+  left: 1316px;;
+}
+.nav_button_Contat{
+  position: relative;
+  left: 1159px;
+
+}
+.nav_button_Home{
+  position: relative;
+  left: 1006px;
+}
+
 /* ============== */
 
 .btn-secondary {
